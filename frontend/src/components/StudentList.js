@@ -23,13 +23,11 @@ function StudentList() {
       <table>
         <thead>
           <tr>
-            <th>Student ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
             <th>DOB</th>
             <th>Course</th>
-            <th>Enrollment Year</th>
             <th>Status</th>
             <th>Actions</th>
           </tr>
@@ -37,13 +35,11 @@ function StudentList() {
         <tbody>
           {students.map(s => (
             <tr key={s._id}>
-              <td>{s.studentId}</td>
               <td>{s.firstName}</td>
               <td>{s.lastName}</td>
               <td>{s.email}</td>
               <td>{new Date(s.dob).toLocaleDateString()}</td>
               <td>{s.course}</td>
-              <td>{s.enrollmentYear}</td>
               <td>
                 <span style={{ 
                   color: s.status === 'Active' ? 'green' : 'red',

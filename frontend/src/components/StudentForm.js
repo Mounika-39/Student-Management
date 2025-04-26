@@ -22,16 +22,16 @@ function StudentForm({ fetchStudents }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/students', student); // ✅ Matches backend
+      await axios.post('https://student-backend-6vyn.onrender.com/students', student);
       fetchStudents();
       setStudent({
         firstName: '',
         lastName: '',
         email: '',
         dob: '',
-        department: '',
-        isActive: true
-      });
+        course: '',
+        status: 'Active'
+      });      
     } catch (err) {
       console.error('Error adding student:', err.response?.data || err.message);
       alert('Failed to add student: ' + (err.response?.data?.message || err.message));

@@ -5,13 +5,11 @@ import './FormStyles.css';
 
 function AddStudent() {
   const [student, setStudent] = useState({
-    studentId: '',
     firstName: '',
     lastName: '',
     email: '',
     dob: '',
     course: '',
-    enrollmentYear: '',
     status: 'Active',
   });
 
