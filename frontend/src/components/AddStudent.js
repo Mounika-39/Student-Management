@@ -38,9 +38,6 @@ function AddStudent() {
       <h2>Add Student</h2>
       <form onSubmit={handleSubmit} className="student-form">
 
-        <label>Student ID</label>
-        <input name="studentId" type="number" value={student.studentId} onChange={handleChange} required />
-
         <label>First Name</label>
         <input name="firstName" value={student.firstName} onChange={handleChange} required />
 
@@ -55,9 +52,6 @@ function AddStudent() {
 
         <label>Course</label>
         <input name="course" value={student.course} onChange={handleChange} required />
-
-        <label>Enrollment Year</label>
-        <input name="enrollmentYear" type="number" value={student.enrollmentYear} onChange={handleChange} required />
 
         <label>Status</label>
         <select name="status" value={student.status} onChange={handleChange}>

@@ -49,18 +49,6 @@ function EditStudent() {
       <form onSubmit={handleSubmit} className="student-form">
 
         <div className="form-group">
-          <label>Student ID</label>
-          <input
-            name="studentId"
-            type="number"
-            value={student.studentId}
-            onChange={handleChange}
-            placeholder="Enter Student ID"
-            required
-          />
-        </div>
-
-        <div className="form-group">
           <label>First Name</label>
           <input
             name="firstName"
@@ -116,17 +104,6 @@ function EditStudent() {
           />
         </div>
 
-        <div className="form-group">
-          <label>Enrollment Year</label>
-          <input
-            name="enrollmentYear"
-            type="number"
-            value={student.enrollmentYear}
-            onChange={handleChange}
-            placeholder="Enter Enrollment Year"
-            required
-          />
-        </div>
 
         <div className="form-group">
           <label>Status</label>
