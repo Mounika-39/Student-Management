@@ -24,7 +24,7 @@ function AddStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/students', student)
+    axios.post('https://student-backend-6vyn.onrender.com/students', student)
       .then(() => {
         alert('Student added successfully!');
         navigate('/students');

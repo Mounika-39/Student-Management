@@ -7,7 +7,7 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/students')
+    axios.get('https://student-backend-6vyn.onrender.com/students')
       .then(res => setStudents(res.data))
       .catch(err => alert('Error fetching students: ' + err.message));
   }, []);
