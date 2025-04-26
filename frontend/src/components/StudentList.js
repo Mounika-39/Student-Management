@@ -13,7 +13,7 @@ function StudentList() {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/students/${id}`)
+    axios.delete(`https://student-backend-6vyn.onrender.com/${id}`)
       .then(() => setStudents(students.filter(s => s._id !== id)))
       .catch(err => alert('Error deleting student: ' + err.message));
   };

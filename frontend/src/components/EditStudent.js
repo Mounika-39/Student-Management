@@ -17,7 +17,7 @@ function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/students/${id}`)
+    axios.get(`https://student-backend-6vyn.onrender.com/${id}`)
       .then(res => {
         const studentData = res.data;
         studentData.dob = studentData.dob?.split('T')[0]; // Formatting DOB for input
