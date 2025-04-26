@@ -10,7 +10,16 @@ const {
   deleteStudent
 } = require('../controllers/studentController');
 
-router.post('/', createStudent);
+app.post('/students', async (req, res) => {
+  try {
+    const newStudent = new Student(req.body);
+    await newStudent.save();
+    res.status(201).json(newStudent);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 router.get('/', getStudents);
 router.get('/:id', getStudent);
 router.put('/:id', updateStudent);
