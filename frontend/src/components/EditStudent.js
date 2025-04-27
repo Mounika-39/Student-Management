@@ -17,7 +17,7 @@ function EditStudent() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://student-backend-6vyn.onrender.com/${id}`)
+    axios.get(`https://student-management-s9mm.onrender.com/${id}`)
       .then(res => {
         const studentData = res.data;
         studentData.dob = studentData.dob?.split('T')[0]; // Formatting DOB for input
@@ -32,7 +32,7 @@ function EditStudent() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.get(`https://student-backend-6vyn.onrender.com/students/${id}`)
+    axios.get(`https://student-management-s9mm.onrender.com/students/${id}`)
       .then(() => {
         alert('Student updated successfully!');
         navigate('/students');

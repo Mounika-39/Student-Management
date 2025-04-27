@@ -7,13 +7,13 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('https://student-backend-6vyn.onrender.com/students')
+    axios.get('https://student-management-s9mm.onrender.com/students')
       .then(res => setStudents(res.data))
       .catch(err => alert('Error fetching students: ' + err.message));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`https://student-backend-6vyn.onrender.com/${id}`)
+    axios.delete(`https://student-management-s9mm.onrender.com/${id}`)
       .then(() => setStudents(students.filter(s => s._id !== id)))
       .catch(err => alert('Error deleting student: ' + err.message));
   };

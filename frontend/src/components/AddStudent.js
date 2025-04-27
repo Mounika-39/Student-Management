@@ -22,7 +22,7 @@ function AddStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('https://student-backend-6vyn.onrender.com/students', student)
+    axios.post('https://student-management-s9mm.onrender.com/students', student)
       .then(() => {
         alert('Student added successfully!');
         navigate('/students');
