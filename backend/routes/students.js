@@ -9,18 +9,25 @@ const {
   updateStudent,
   deleteStudent
 } = require('../controllers/studentController');
-
-app.post('/students', async (req, res) => {
+router.post('/students', async (req, res) => {
   try {
-    const newStudent = new Student(req.body);
-    await newStudent.save();
-    res.status(201).json(newStudent);
+      const student = new Student(req.body);
+      await student.save();
+      res.status(201).send(student);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+      res.status(400).send(error);
   }
 });
 
-router.get('/', getStudents);
+router.get('/students', async (req, res) => {
+  try {
+      const students = await Student.find();
+      res.send(students);
+  } catch (error) {
+      res.status(500).send(error);
+  }
+});
+
 router.get('/:id', getStudent);
 router.put('/:id', updateStudent);
 router.delete('/:id', deleteStudent);
