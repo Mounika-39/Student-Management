@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './FormStyles.css';
 
 function AddStudent() {
   const [student, setStudent] = useState({
@@ -22,7 +21,7 @@ function AddStudent() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('https://student-management-s9mm.onrender.com/students', student)
+    axios.post(`${process.env.REACT_APP_API_URL}/students`, student)
       .then(() => {
         alert('Student added successfully!');
         navigate('/students');
@@ -37,7 +36,7 @@ function AddStudent() {
     <div className="form-container">
       <h2>Add Student</h2>
       <form onSubmit={handleSubmit} className="student-form">
-
+        {/* input fields */}
         <label>First Name</label>
         <input name="firstName" value={student.firstName} onChange={handleChange} required />
 

@@ -22,7 +22,7 @@ function StudentForm({ fetchStudents }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://student-management-s9mm.onrender.com/students', student);
+      await axios.post(`${process.env.REACT_APP_API_URL}/students`, student);
       fetchStudents();
       setStudent({
         firstName: '',

@@ -7,13 +7,13 @@ function StudentList() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get('https://student-management-s9mm.onrender.com/students')
+    axios.get(`${process.env.REACT_APP_API_URL}/students`)
       .then(res => setStudents(res.data))
       .catch(err => alert('Error fetching students: ' + err.message));
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`https://student-management-s9mm.onrender.com/${id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/${id}`)
       .then(() => setStudents(students.filter(s => s._id !== id)))
       .catch(err => alert('Error deleting student: ' + err.message));
   };
